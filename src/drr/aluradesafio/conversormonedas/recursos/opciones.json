@@ -1,0 +1,20 @@
+[
+  {
+    "id":  1,
+    "descripcion": "Dólar =>> Nuevo sol peruano",
+    "base": "USD",
+    "cambio": "PEN"
+  },
+  {
+    "id":  2,
+    "descripcion": "Nuevo sol peruano =>> Dólar",
+    "base": "PEN",
+    "cambio": "USD"
+  },
+  {
+    "id": 9,
+    "descripcion": "Salir",
+    "base": "",
+    "cambio": ""
+  }
+]

@@ -1,0 +1,75 @@
+package drr.aluradesafio.conversormonedas.dominio;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
+public class Convertidor {
+    private String fechaDeUltimaActualizacion;
+    private String fechaDeProximaActualizacion;
+    private String monedaBase;
+    private String monedaCambio;
+    private BigDecimal monedaValor;
+    private BigDecimal monedaTotal;
+
+    public Convertidor(RConvertidor convertidorApi) {
+        LocalDateTime ultimaActualizacion = LocalDateTime.ofInstant(Instant.ofEpochSecond(convertidorApi.time_last_update_unix()), ZoneId.systemDefault());
+        this.fechaDeUltimaActualizacion = ultimaActualizacion.toString();
+        LocalDateTime proximaActualizacion = LocalDateTime.ofInstant(Instant.ofEpochSecond(convertidorApi.time_next_update_unix()), ZoneId.systemDefault());
+        this.fechaDeProximaActualizacion = proximaActualizacion.toString();
+
+        this.monedaBase = convertidorApi.base_code();
+        this.monedaCambio = convertidorApi.target_code();
+        this.monedaValor = convertidorApi.conversion_rate();
+        this.monedaTotal = convertidorApi.conversion_result();
+    }
+
+    public String getFechaDeUltimaActualizacion() {
+        return fechaDeUltimaActualizacion;
+    }
+
+    public void setFechaDeUltimaActualizacion(String fechaDeUltimaActualizacion) {
+        this.fechaDeUltimaActualizacion = fechaDeUltimaActualizacion;
+    }
+
+    public String getFechaDeProximaActualizacion() {
+        return fechaDeProximaActualizacion;
+    }
+
+    public void setFechaDeProximaActualizacion(String fechaDeProximaActualizacion) {
+        this.fechaDeProximaActualizacion = fechaDeProximaActualizacion;
+    }
+
+    public String getMonedaBase() {
+        return monedaBase;
+    }
+
+    public void setMonedaBase(String monedaBase) {
+        this.monedaBase = monedaBase;
+    }
+
+    public String getMonedaCambio() {
+        return monedaCambio;
+    }
+
+    public void setMonedaCambio(String monedaCambio) {
+        this.monedaCambio = monedaCambio;
+    }
+
+    public BigDecimal getMonedaValor() {
+        return monedaValor;
+    }
+
+    public void setMonedaValor(BigDecimal monedaValor) {
+        this.monedaValor = monedaValor;
+    }
+
+    public BigDecimal getMonedaTotal() {
+        return monedaTotal;
+    }
+
+    public void setMonedaTotal(BigDecimal monedaTotal) {
+        this.monedaTotal = monedaTotal;
+    }
+}
