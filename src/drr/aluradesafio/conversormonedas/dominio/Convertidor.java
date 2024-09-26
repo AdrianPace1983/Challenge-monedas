@@ -6,19 +6,20 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 public class Convertidor {
+    private String respuesta;
     private String fechaDeUltimaActualizacion;
     private String fechaDeProximaActualizacion;
     private String monedaBase;
     private String monedaCambio;
-    private BigDecimal monedaValor;
-    private BigDecimal monedaTotal;
+    private double monedaValor;
+    private double monedaTotal;
 
     public Convertidor(RConvertidor convertidorApi) {
+        this.respuesta = convertidorApi.result();
         LocalDateTime ultimaActualizacion = LocalDateTime.ofInstant(Instant.ofEpochSecond(convertidorApi.time_last_update_unix()), ZoneId.systemDefault());
         this.fechaDeUltimaActualizacion = ultimaActualizacion.toString();
         LocalDateTime proximaActualizacion = LocalDateTime.ofInstant(Instant.ofEpochSecond(convertidorApi.time_next_update_unix()), ZoneId.systemDefault());
         this.fechaDeProximaActualizacion = proximaActualizacion.toString();
-
         this.monedaBase = convertidorApi.base_code();
         this.monedaCambio = convertidorApi.target_code();
         this.monedaValor = convertidorApi.conversion_rate();
@@ -57,19 +58,24 @@ public class Convertidor {
         this.monedaCambio = monedaCambio;
     }
 
-    public BigDecimal getMonedaValor() {
+    public double getMonedaValor() {
         return monedaValor;
     }
 
-    public void setMonedaValor(BigDecimal monedaValor) {
+    public void setMonedaValor(double monedaValor) {
         this.monedaValor = monedaValor;
     }
 
-    public BigDecimal getMonedaTotal() {
+    public double getMonedaTotal() {
         return monedaTotal;
     }
 
-    public void setMonedaTotal(BigDecimal monedaTotal) {
+    public void setMonedaTotal(double monedaTotal) {
         this.monedaTotal = monedaTotal;
+    }
+
+    @Override
+    public String toString() {
+        return  " [" + monedaBase + "] corresponde al valor final de =>>> " + monedaTotal + " [" + monedaCambio + "]";
     }
 }

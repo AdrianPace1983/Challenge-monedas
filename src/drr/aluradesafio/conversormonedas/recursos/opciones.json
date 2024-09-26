@@ -12,6 +12,42 @@
     "cambio": "USD"
   },
   {
+    "id":  3,
+    "descripcion": "Dólar =>> Peso argentino",
+    "base": "USD",
+    "cambio": "ARS"
+  },
+  {
+    "id":  4,
+    "descripcion": "Peso argentino =>> Dólar",
+    "base": "ARS",
+    "cambio": "USD"
+  },
+  {
+    "id":  5,
+    "descripcion": "Dólar =>> Real brasileño",
+    "base": "USD",
+    "cambio": "BRL"
+  },
+  {
+    "id":  6,
+    "descripcion": "Real brasileño =>> Dólar",
+    "base": "BRL",
+    "cambio": "USD"
+  },
+  {
+    "id":  7,
+    "descripcion": "Dólar =>> Peso colombiano",
+    "base": "USD",
+    "cambio": "COP"
+  },
+  {
+    "id":  8,
+    "descripcion": "Peso colombiano =>> Dólar",
+    "base": "COP",
+    "cambio": "USD"
+  },
+  {
     "id": 9,
     "descripcion": "Salir",
     "base": "",
