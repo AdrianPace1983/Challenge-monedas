@@ -68,7 +68,7 @@ src/
 ```
 ## Conclusión
 
-<p style="text-align: justify">Este conversor de monedas es una herramienta educativa diseñada para facilitar el uso de APIs externas y la manipulación de datos JSON en Java. Al utilizar buenas prácticas como el manejo seguro del API Key mediante `Dotenv` y la transformación de datos con `Gson`, el proyecto ofrece una estructura sólida y escalable. La funcionalidad principal se basa en un menú interactivo que permite seleccionar las monedas a convertir y obtener tasas de cambio actualizadas, proporcionando una base útil para aprender sobre integración de servicios externos en aplicaciones Java.</p>
+Este conversor de monedas es una herramienta educativa diseñada para facilitar el uso de APIs externas y la manipulación de datos JSON en Java. Al utilizar buenas prácticas como el manejo seguro del API Key mediante `Dotenv` y la transformación de datos con `Gson`, el proyecto ofrece una estructura sólida y escalable. La funcionalidad principal se basa en un menú interactivo que permite seleccionar las monedas a convertir y obtener tasas de cambio actualizadas, proporcionando una base útil para aprender sobre integración de servicios externos en aplicaciones Java.
 
 ## Cómo Contribuir
 
