@@ -1,6 +1,6 @@
 # Challenge: Conversor de Monedas
 
-<p style="text-align: justify">Este proyecto es un conversor de monedas desarrollado en Java como parte del desafio del curso Java Orientado a Objetos G7 - One de Oracle + Alura Latam. El sistema consume el API de [ExchangeRate-API](https://www.exchangerate-api.com/docs/overview) para obtener las tasas de conversión de monedas y utiliza un menú interactivo generado a partir de un archivo JSON para realizar las conversiones.</p>
+Este proyecto es un conversor de monedas desarrollado en Java como parte del desafio del curso Java Orientado a Objetos G7 - One de Oracle + Alura Latam. El sistema consume el API de [ExchangeRate-API](https://www.exchangerate-api.com/docs/overview) para obtener las tasas de conversión de monedas y utiliza un menú interactivo generado a partir de un archivo JSON para realizar las conversiones.
 
 ## Características
 
