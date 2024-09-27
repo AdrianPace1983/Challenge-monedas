@@ -1,6 +1,6 @@
 # Challenge: Conversor de Monedas
 
-Este proyecto es un conversor de monedas desarrollado en Java como parte del desafio del curso Java Orientado a Objetos G7 - One de Oracle + Alura Latam. El sistema consume el API de [ExchangeRate-API](https://www.exchangerate-api.com/docs/overview) para obtener las tasas de conversión de monedas y utiliza un menú interactivo generado a partir de un archivo JSON para realizar las conversiones.
+<p style="text-align: justify">Este proyecto es un conversor de monedas desarrollado en Java como parte del desafio del curso Java Orientado a Objetos G7 - One de Oracle + Alura Latam. El sistema consume el API de [ExchangeRate-API](https://www.exchangerate-api.com/docs/overview) para obtener las tasas de conversión de monedas y utiliza un menú interactivo generado a partir de un archivo JSON para realizar las conversiones.</p>
 
 ## Características
 
@@ -68,7 +68,7 @@ src/
 ```
 ## Conclusión
 
-Este conversor de monedas es una herramienta educativa diseñada para facilitar el uso de APIs externas y la manipulación de datos JSON en Java. Al utilizar buenas prácticas como el manejo seguro del API Key mediante `Dotenv` y la transformación de datos con `Gson`, el proyecto ofrece una estructura sólida y escalable. La funcionalidad principal se basa en un menú interactivo que permite seleccionar las monedas a convertir y obtener tasas de cambio actualizadas, proporcionando una base útil para aprender sobre integración de servicios externos en aplicaciones Java.
+<p style="text-align: justify">Este conversor de monedas es una herramienta educativa diseñada para facilitar el uso de APIs externas y la manipulación de datos JSON en Java. Al utilizar buenas prácticas como el manejo seguro del API Key mediante `Dotenv` y la transformación de datos con `Gson`, el proyecto ofrece una estructura sólida y escalable. La funcionalidad principal se basa en un menú interactivo que permite seleccionar las monedas a convertir y obtener tasas de cambio actualizadas, proporcionando una base útil para aprender sobre integración de servicios externos en aplicaciones Java.</p>
 
 ## Cómo Contribuir
 
@@ -80,7 +80,7 @@ Este conversor de monedas es una herramienta educativa diseñada para facilitar 
 2. **Clona tu fork localmente**:
 
    ```bash
-   git clone https://github.com/tu_usuario/conversor-monedas.git
+   git clone https://github.com/odriverar/conversor-de-monedas.git
    ```
 3. **Crea una nueva rama para tu cambio**
    ```bash
@@ -108,4 +108,4 @@ Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue en el reposit
 
 ---
 
->Gracias por utilizar este proyecto. Esperamos que estas herramientas te sean útiles.
+>Gracias por utilizar este proyecto. Esperamos que esta herramienta te sea útil.
