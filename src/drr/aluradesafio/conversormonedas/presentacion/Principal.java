@@ -12,6 +12,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -35,26 +36,12 @@ public class Principal {
         Scanner consola = new Scanner(System.in);
         boolean salir = false;
         try{
-            // Las opciones del menú serán cargadas desde un JSON.
-            ClassLoader classLoader = Principal.class.getClassLoader();
-            InputStreamReader lectura = new InputStreamReader(Objects.requireNonNull(classLoader.getResourceAsStream("drr/aluradesafio/conversormonedas/recursos/opciones.json")));
+            // Llamamos al metodo que cargara las opciones desde un archivo JSON.
+            List<Opcion> opciones = cargarOpciones();
+            // Mostramos el mennu.
+            mostrarMenu(opciones);
 
-            Gson gson = new Gson();
-            Type menuLista = new TypeToken<List<Opcion>>() {}.getType();
-            List<Opcion> opciones = gson.fromJson(lectura, menuLista);
-            lectura.close();
-
-            System.out.println("**************************************************************************");
-            System.out.println("*** Bienvenido(a) al Conversor de Monedas ***");
-
-            //Creación del menú
-            for (Opcion opcion : opciones) {
-                System.out.println(opcion);
-            }
-
-            System.out.println("**************************************************************************");
-            System.out.println();
-            System.out.print("Elija una opción válida: ");
+            System.out.print("Escriba una opción válida o 99 para salir: ");
             int opcionElegida = consola.nextInt();
 
             Opcion opcionSeleccionada = opciones.stream()
@@ -63,13 +50,11 @@ public class Principal {
                     .orElse(null);
 
             if (opcionSeleccionada != null) {
-                if (opcionSeleccionada.getId() == 9) {
+                if (opcionSeleccionada.getId() == 99) {
                     System.out.println("¡Hasta pronto!");
                     salir = true;
                 } else {
-                    System.out.println("Opción seleccionada: " + opcionSeleccionada.getDescripcion());
-                    IConvertirMoneda convertirMoneda = new ConvertirMoneda();
-                    ejecutarConversion(opcionSeleccionada, convertirMoneda, apiKey);
+                    manejarSeleccion(opcionSeleccionada, apiKey);
                 }
             } else {
                 System.out.println("Opción inválida");
@@ -80,21 +65,54 @@ public class Principal {
         return salir;
     }
 
+    private static List<Opcion> cargarOpciones() throws Exception {
+        // Las opciones del menú serán cargadas desde un JSON.
+        ClassLoader classLoader = Principal.class.getClassLoader();
+        InputStreamReader lectura = new InputStreamReader(Objects.requireNonNull(classLoader.getResourceAsStream("drr/aluradesafio/conversormonedas/recursos/opciones.json")));
+
+        Gson gson = new Gson();
+        Type menuLista = new TypeToken<List<Opcion>>() {}.getType();
+        List<Opcion> opciones = gson.fromJson(lectura, menuLista);
+        lectura.close();
+        return opciones;
+    }
+
+    private static void mostrarMenu(List<Opcion> opciones){
+        System.out.println("**************************************************************************");
+        System.out.println("*** Bienvenido(a) al Conversor de Monedas ***");
+        //Creación del menú
+        for (Opcion opcion : opciones) {
+            System.out.println(opcion);
+        }
+        System.out.println("**************************************************************************");
+        System.out.println();
+    }
+
+    private static void manejarSeleccion(Opcion opcionSeleccionada, String apiKey){
+        System.out.println("Opción seleccionada: " + opcionSeleccionada.getDescripcion());
+        IConvertirMoneda convertirMoneda = new ConvertirMoneda();
+        ejecutarConversion(opcionSeleccionada, convertirMoneda, apiKey);
+    }
+
     private static void ejecutarConversion(Opcion opcion, IConvertirMoneda convertirMoneda, String apiKey) {
         Scanner consola = new Scanner(System.in);
 
         System.out.print("Ingrese el valor que se va a convertir: ");
         try{
-            var montoAConvertir = consola.nextDouble();
+            double montoAConvertir = consola.nextDouble();
             Convertidor convertidor = convertirMoneda.convertirMoneda(opcion, montoAConvertir, apiKey);
-            System.out.println("--------------------------------------------------------------------------");
-            System.out.println("El valor " + montoAConvertir + convertidor.toString());
-            System.out.println("--------------------------------------------------------------------------");
             Consultas consultas = convertirMoneda.numeroConsultas(apiKey);
-            System.out.println(">>>>>>>>>>" + consultas.toString());
-            System.out.println();
+            imprimirResultado(convertidor, montoAConvertir, consultas);
         } catch (Exception e){
             System.out.println("Error al convertir moneda: " + e.getMessage());
         }
+    }
+
+    private static void imprimirResultado(Convertidor convertidor, double montoAConvertir, Consultas consultas){
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.println("El valor " + montoAConvertir + convertidor);
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.println(">>>>>>>>>>" + consultas);
+        System.out.println();
     }
 }

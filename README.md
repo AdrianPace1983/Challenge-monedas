@@ -48,9 +48,13 @@ Este proyecto es un conversor de monedas desarrollado en Java como parte del des
     }
    ]
    ```
-
+   > **Nota**: El `Id` 99 está reservado para cerrar el sistema.
 ## Uso
 1. **Ejecuta el programa desde IntelliJ o el IDE de tu preferencia**
+2. **El sistema carga y muestra un menú inicial basado en un archivo JSON que contiene las opciones de conversión de moneda.** 
+3. **Selecciona una opción del menú para realizar la conversión de monedas.**
+4. **El sistema consultará las tasas de cambio actualizadas desde la API de ExchangeRate-API y mostrará el resultado en consola.**
+   >**Nota**: El `Id` 99 está reservado para cerrar el sistema.
 
 ## Estructura del Proyecto
 ```plaintext
@@ -66,9 +70,11 @@ src/
     │   └── ...                 # Lógica de negocio y servicio de conversión de moneda
 └── .env                        # Archivo que contiene la variable API_KEY
 ```
+
 ## Conclusión
 
-Este conversor de monedas es una herramienta educativa diseñada para facilitar el uso de APIs externas y la manipulación de datos JSON en Java. Al utilizar buenas prácticas como el manejo seguro del API Key mediante `Dotenv` y la transformación de datos con `Gson`, el proyecto ofrece una estructura sólida y escalable. La funcionalidad principal se basa en un menú interactivo que permite seleccionar las monedas a convertir y obtener tasas de cambio actualizadas, proporcionando una base útil para aprender sobre integración de servicios externos en aplicaciones Java.
+Este conversor de monedas es una herramienta educativa diseñada para facilitar el uso de APIs externas y la manipulación de datos JSON en Java. Al utilizar buenas prácticas como el manejo seguro del API Key mediante `Dotenv` y la transformación de datos con `Gson`, el proyecto ofrece una estructura sólida y escalable. El sistema también incluye un menú interactivo, donde el `Id` 99 está reservado para cerrar el sistema. Proporciona una base útil para aprender sobre integración de servicios externos en aplicaciones Java.
+
 
 ## Cómo Contribuir
 
