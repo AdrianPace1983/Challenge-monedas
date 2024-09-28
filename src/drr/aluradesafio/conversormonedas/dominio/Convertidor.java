@@ -14,6 +14,9 @@ public class Convertidor {
     private double monedaValor;
     private double monedaTotal;
 
+    public Convertidor() {
+    }
+
     public Convertidor(RConvertidor convertidorApi) {
         this.respuesta = convertidorApi.result();
         LocalDateTime ultimaActualizacion = LocalDateTime.ofInstant(Instant.ofEpochSecond(convertidorApi.time_last_update_unix()), ZoneId.systemDefault());

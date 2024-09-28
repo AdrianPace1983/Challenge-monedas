@@ -48,6 +48,12 @@
     "cambio": "USD"
   },
   {
+    "id":  98,
+    "descripcion": "Mostrar el historial",
+    "base": "COP",
+    "cambio": "USD"
+  },
+  {
     "id": 99,
     "descripcion": "Salir",
     "base": "",

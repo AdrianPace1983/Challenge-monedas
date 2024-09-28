@@ -1,0 +1,52 @@
+[
+  {
+    "fechaConsulta": "2024-09-27T22:31:39.493843",
+    "montoCambio": 678.0,
+    "fechaDeUltimaActualizacion": "2024-09-27T19:00:01",
+    "fechaDeProximaActualizacion": "2024-09-28T19:00:01",
+    "monedaBase": "USD",
+    "monedaCambio": "PEN",
+    "monedaValor": 3.7574,
+    "monedaTotal": 2547.5172
+  },
+  {
+    "fechaConsulta": "2024-09-27T22:38:47.131191",
+    "montoCambio": 456.0,
+    "fechaDeUltimaActualizacion": "2024-09-27T19:00:01",
+    "fechaDeProximaActualizacion": "2024-09-28T19:00:01",
+    "monedaBase": "PEN",
+    "monedaCambio": "USD",
+    "monedaValor": 0.2661,
+    "monedaTotal": 121.3416
+  },
+  {
+    "fechaConsulta": "2024-09-27T22:47:28.282347",
+    "montoCambio": 786.0,
+    "fechaDeUltimaActualizacion": "2024-09-27T19:00:01",
+    "fechaDeProximaActualizacion": "2024-09-28T19:00:01",
+    "monedaBase": "USD",
+    "monedaCambio": "BRL",
+    "monedaValor": 5.4385,
+    "monedaTotal": 4274.661
+  },
+  {
+    "fechaConsulta": "2024-09-27T22:50:54.543846",
+    "montoCambio": 678976.0,
+    "fechaDeUltimaActualizacion": "2024-09-27T19:00:01",
+    "fechaDeProximaActualizacion": "2024-09-28T19:00:01",
+    "monedaBase": "PEN",
+    "monedaCambio": "USD",
+    "monedaValor": 0.2661,
+    "monedaTotal": 180675.5136
+  },
+  {
+    "fechaConsulta": "2024-09-27T23:34:56.170820",
+    "montoCambio": 0.0,
+    "fechaDeUltimaActualizacion": "2024-09-27T19:00:01",
+    "fechaDeProximaActualizacion": "2024-09-28T19:00:01",
+    "monedaBase": "USD",
+    "monedaCambio": "ARS",
+    "monedaValor": 970.58,
+    "monedaTotal": 0.0
+  }
+]
