@@ -1,12 +1,9 @@
 package drr.aluradesafio.conversormonedas.servicio;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParser;
 import drr.aluradesafio.conversormonedas.dominio.*;
 
-import java.io.FileWriter;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;

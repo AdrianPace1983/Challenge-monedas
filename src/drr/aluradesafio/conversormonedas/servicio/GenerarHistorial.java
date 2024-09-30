@@ -49,7 +49,7 @@ public class GenerarHistorial implements IGenerarHistorial {
             System.out.printf("| %-25s | %-25s | %-25s |\n", "Fecha", "De", "A");
             System.out.println("|---------------------------|---------------------------|---------------------------|");
             for (Historial historial : ultimosRegsitros) {
-                System.out.printf("| %-25s | %-25s | %-25s |\n", historial.getFechaStringFormato(), historial.getMontoCambioFormato() + " [" + historial.getMonedaBase() + "]", historial.getMonedaTotalFormato() + " [" + historial.getMonedaCambio() + "]");
+                System.out.printf("| %-25s | %25s | %25s |\n", historial.getFechaStringFormato(), historial.getMontoCambioFormato() + " [" + historial.getMonedaBase() + "]", historial.getMonedaTotalFormato() + " [" + historial.getMonedaCambio() + "]");
             }
             System.out.println("|---------------------------|---------------------------|---------------------------|");
 

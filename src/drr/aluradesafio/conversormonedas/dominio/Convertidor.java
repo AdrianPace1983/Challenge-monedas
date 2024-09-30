@@ -1,6 +1,5 @@
 package drr.aluradesafio.conversormonedas.dominio;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
