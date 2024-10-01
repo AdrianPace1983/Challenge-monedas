@@ -7,12 +7,12 @@ import drr.aluradesafio.conversormonedas.servicio.ConvertirMoneda;
 import drr.aluradesafio.conversormonedas.servicio.GenerarHistorial;
 import drr.aluradesafio.conversormonedas.servicio.IConvertirMoneda;
 
+import javax.sound.midi.SysexMessage;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ProcesarSeleccion {
     public void manejarSeleccion(Opcion opcionSeleccionada, String apiKey){
-        System.out.println("Opción seleccionada: " + opcionSeleccionada.getDescripcion());
         IConvertirMoneda convertirMoneda = new ConvertirMoneda();
         ejecutarConversion(opcionSeleccionada, convertirMoneda, apiKey);
     }
@@ -31,6 +31,9 @@ public class ProcesarSeleccion {
             GenerarHistorial generarHistorial = new GenerarHistorial();
             generarHistorial.generarHistorial(convertidor, montoAConvertir);
             Consultas consultas = convertirMoneda.numeroConsultas(apiKey);
+
+            System.out.println("Operación seleccionada: " + opcion.getDescripcion());
+
             imprimirResultado(convertidor, montoAConvertir, consultas);
         } catch (InputMismatchException ex){
             System.out.println("Valor ingresado no es valido, por favor vuelva a intentar.");
@@ -40,11 +43,14 @@ public class ProcesarSeleccion {
     }
 
     private static void imprimirResultado(Convertidor convertidor, double montoAConvertir, Consultas consultas) throws Exception{
-        System.out.println("--------------------------------------------------------------------------");
-        System.out.println("El valor " + montoAConvertir + convertidor);
-        System.out.println("--------------------------------------------------------------------------");
-        System.out.println(">>>>>>>>>>" + consultas);
-        System.out.println();
+        System.out.println("|--------------------------------|--------------------------------|");
+        System.out.printf("| %-30s | %-30s |\n", "Valor ingresado en: [" + convertidor.getMonedaBase() + "]", "Valor final en: [" + convertidor.getMonedaCambio() + "]");
+        System.out.println("|--------------------------------|--------------------------------|");
+        System.out.printf("| %30s | %30s |\n", montoAConvertir, convertidor.getMonedaTotal());
+        System.out.println("|--------------------------------|--------------------------------|");
+        System.out.printf("| %-63s |\n", ">>>>>>>>>> " + consultas);
+        System.out.println("|-----------------------------------------------------------------|");
+
         System.out.println("Presiona Enter para continuar...");
         System.in.read();
     }

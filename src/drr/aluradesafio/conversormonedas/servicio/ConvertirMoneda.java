@@ -3,6 +3,7 @@ package drr.aluradesafio.conversormonedas.servicio;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import drr.aluradesafio.conversormonedas.dominio.*;
+import drr.aluradesafio.conversormonedas.excepcion.ConversionMonedaExcepcion;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -28,9 +29,11 @@ public class ConvertirMoneda implements IConvertirMoneda {
                 RConvertidor miRespuestaR = gson.fromJson(httpResponse.body(), RConvertidor.class);
 
                 respuesta = new Convertidor(miRespuestaR);
+            } else {
+                throw new ConversionMonedaExcepcion("Error al realizar la consulta, codigo de respuesta: " + httpResponse.statusCode());
             }
-        } catch (Exception ex){
-            ex.printStackTrace();
+        } catch (Exception ex) {
+            throw new ConversionMonedaExcepcion("Error al convertir la moneda: " + ex.getMessage());
         }
         return respuesta;
     }
@@ -52,9 +55,11 @@ public class ConvertirMoneda implements IConvertirMoneda {
             if (httpResponse.statusCode() == 200) {
                 RConsultas miConsultas = gson.fromJson(httpResponse.body(), RConsultas.class);
                 respuesta = new Consultas(miConsultas);
+            } else {
+                throw new ConversionMonedaExcepcion("Error al realizar la consulta, codigo de respuesta: " + httpResponse.statusCode());
             }
         } catch (Exception ex){
-            ex.printStackTrace();
+            throw new ConversionMonedaExcepcion("Error al traer el numero de consultas: " + ex.getMessage());
         }
 
         return respuesta;

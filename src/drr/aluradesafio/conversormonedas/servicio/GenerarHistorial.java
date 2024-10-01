@@ -42,7 +42,7 @@ public class GenerarHistorial implements IGenerarHistorial {
                     h2.getFechaLocalDateTime().compareTo(h1.getFechaLocalDateTime())
                     );
 
-            int registrosMostrar = Math.min(historiales.size(), 10);
+            int registrosMostrar = Math.min(historiales.size(), 30);
             List<Historial> ultimosRegsitros = historiales.subList(historiales.size() - registrosMostrar, historiales.size());
 
             System.out.println("|---------------------------|---------------------------|---------------------------|");
@@ -58,7 +58,6 @@ public class GenerarHistorial implements IGenerarHistorial {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     private List<Historial> historialConsultas() throws IOException{

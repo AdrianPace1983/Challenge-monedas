@@ -6,36 +6,27 @@ public class Opcion {
     private String base;
     private String cambio;
 
-    public int getId() {
-        return id;
+    public Opcion(int id, String descripcion, String base, String cambio) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.base = base;
+        this.cambio = cambio;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId() {
+        return id;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public String getBase() {
         return base;
     }
 
-    public void setBase(String base) {
-        this.base = base;
-    }
-
     public String getCambio() {
         return cambio;
-    }
-
-    public void setCambio(String cambio) {
-        this.cambio = cambio;
     }
 
     @Override
