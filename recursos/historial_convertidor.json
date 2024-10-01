@@ -38,5 +38,25 @@
     "monedaCambio": "USD",
     "monedaValor": 2.395E-4,
     "monedaTotal": 0.958
+  },
+  {
+    "fechaConsulta": "2024-09-30T19:36:12.519298",
+    "montoCambio": 520.0,
+    "fechaDeUltimaActualizacion": "2024-09-30T19:00:02",
+    "fechaDeProximaActualizacion": "2024-10-01T19:00:02",
+    "monedaBase": "USD",
+    "monedaCambio": "PEN",
+    "monedaValor": 3.714,
+    "monedaTotal": 1931.28
+  },
+  {
+    "fechaConsulta": "2024-10-01T05:17:23.009679",
+    "montoCambio": 519.0,
+    "fechaDeUltimaActualizacion": "2024-09-30T19:00:02",
+    "fechaDeProximaActualizacion": "2024-10-01T19:00:02",
+    "monedaBase": "USD",
+    "monedaCambio": "PEN",
+    "monedaValor": 3.714,
+    "monedaTotal": 1927.566
   }
 ]

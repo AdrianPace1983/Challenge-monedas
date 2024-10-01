@@ -2,6 +2,8 @@
 
 Este proyecto es un conversor de monedas desarrollado en Java como parte del desafio del curso Java Orientado a Objetos G7 - One de Oracle + Alura Latam. El sistema consume el API de [ExchangeRate-API](https://www.exchangerate-api.com/docs/overview) para obtener las tasas de conversión de monedas y utiliza un menú interactivo generado a partir de un archivo JSON para realizar las conversiones.
 
+![Conversor de monedas](recursos/Convertidor-v0.gif)
+
 ## Características
 
 - **Uso de ExchangeRate-API**: El sistema consume la API de tasas de cambio para realizar las conversiones entre diferentes monedas.
@@ -57,22 +59,22 @@ Este proyecto es un conversor de monedas desarrollado en Java como parte del des
 4. **El sistema consultará las tasas de cambio actualizadas desde la API de ExchangeRate-API y mostrará el resultado en consola.**
 5. **Las conversiones realizadas se almacenan en un archivo JSON que guarda el historial de consultas.**
 6. **El usuario tiene la opción de revisar las últimas consultas desde el menú.**
-   > **Nota**:  
-   > - El `Id` 98 está reservado para revisar el historial de conversiones.
-   > - El `Id` 99 está reservado para cerrar el sistema.
+   >    **Nota**:  
+   >    - El `Id` 98 está reservado para revisar el historial de conversiones.
+   >    - El `Id` 99 está reservado para cerrar el sistema.
 
 ## Estructura del Proyecto
 ```plaintext
 src/
 └── drr.aluradesafio.conversormonedas
-    ├── dominio
-    │   └── ...                 # Clases del dominio del sistema
-    ├── presentacion
-    │   └── Principal.java      # Clases relacionada a la interfaz de consola
-    ├── recursos
-    │   └── opciones.json       # Archivo JSON con las opciones del menú
-    ├── servicio
-    │   └── ...                 # Lógica de negocio y servicio de conversión de moneda
+│   ├── dominio
+│   │   └── ...                 # Clases del dominio del sistema
+│   ├── presentacion
+│   │   └── Principal.java      # Clases relacionada a la interfaz de consola
+│   ├── recursos
+│   │   └── opciones.json       # Archivo JSON con las opciones del menú
+│   ├── servicio
+│   │   └── ...                 # Lógica de negocio y servicio de conversión de moneda
 └── .env                        # Archivo que contiene la variable API_KEY
 ```
 ## Almacenamiento de Historial
