@@ -66,15 +66,15 @@ Este proyecto es un conversor de monedas desarrollado en Java como parte del des
 ## Estructura del Proyecto
 ```plaintext
 src/
-└── drr.aluradesafio.conversormonedas
+├── drr.aluradesafio.conversormonedas
 │   ├── dominio
 │   │   └── ...                 # Clases del dominio del sistema
 │   ├── presentacion
 │   │   └── Principal.java      # Clases relacionada a la interfaz de consola
 │   ├── recursos
 │   │   └── opciones.json       # Archivo JSON con las opciones del menú
-│   ├── servicio
-│   │   └── ...                 # Lógica de negocio y servicio de conversión de moneda
+│   └── servicio
+│       └── ...                 # Lógica de negocio y servicio de conversión de moneda
 └── .env                        # Archivo que contiene la variable API_KEY
 ```
 ## Almacenamiento de Historial
